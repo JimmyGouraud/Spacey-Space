@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class MoveController : MonoBehaviour
 {
@@ -12,7 +11,6 @@ public class MoveController : MonoBehaviour
 	Vector3 leftScreenBorder, rightScreenBorder;
 	bool buttonMoveLeftPressed, buttonMoveRightPressed;
 
-	// Use this for initialization
 	void Start ()
 	{
 		buttonMoveLeftPressed = false;
@@ -55,7 +53,6 @@ public class MoveController : MonoBehaviour
 		direction = newDirection;
 	}
 	
-
 	public void StopMove(Direction dir)
 	{
 		direction = Direction.Stationary;
