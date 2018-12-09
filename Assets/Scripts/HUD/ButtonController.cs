@@ -6,13 +6,13 @@ using UnityEngine.EventSystems;
 
 
 [Serializable]
-public class ButtonEvent : UnityEvent<MoveController.Direction> { }
+public class ButtonEvent : UnityEvent<PlayerControl.Direction> { }
 
 
 public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
 	public GameObject player;
-	public MoveController.Direction direction;
+	public PlayerControl.Direction direction;
 	public ButtonEvent move, stopMove;
 
 	void Start()
