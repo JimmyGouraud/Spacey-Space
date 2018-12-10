@@ -8,8 +8,9 @@ TODO list:
  * ~~Player control right/left fix between edges of screen~~
  * ~~Player/Enemy shooting~~
  * ~~Life management + HUD life management~~
- * Score management + HUD score management
+ * ~~Score management + HUD score management~~
  * Enemy movement
  * Level generator
  * Player/Enemy animation
  * Destruction/Explosion animation
+ * Game Over display

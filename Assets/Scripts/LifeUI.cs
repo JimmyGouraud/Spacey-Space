@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class LifeUI : MonoBehaviour
 {
 	public GameObject playerLifePrefab;
 	public Life playerLife;
-	public float offset = 5f;
+	public int pixelOffet = 10;
 
 	void Start()
 	{
 		playerLife.UpdateLifeCount += UpdateLifeUI;
-		UpdateLifeUI(playerLife.nbLife);
 	}
 
 	public void UpdateLifeUI(int nbLife)
@@ -28,7 +26,7 @@ public class LifeUI : MonoBehaviour
 
 			for (int i = nbLifeUI; i < nbLife; i++) {
 				GameObject life = Instantiate(playerLifePrefab, this.transform);
-				life.GetComponent<RectTransform>().anchoredPosition = new Vector2(lifePosition.x, lifePosition.y - (lifeSize.y + offset) * i);
+				life.GetComponent<RectTransform>().anchoredPosition = new Vector2(lifePosition.x, lifePosition.y - (lifeSize.y + pixelOffet) * i);
 			}
 		}
 	}

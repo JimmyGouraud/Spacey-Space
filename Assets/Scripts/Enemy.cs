@@ -3,10 +3,10 @@
 
 public class Enemy : MonoBehaviour
 {
-	void OnTriggerEnter2D(Collider2D collision)
+	public int points = 250; // How much is the enemy worth
+
+	void OnDestroy()
 	{
-		if (collision.tag == "Player") {
-			Destroy(this.gameObject);
-		}
+		Score.Instance.AddPoints(points);
 	}
 }

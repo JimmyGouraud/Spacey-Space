@@ -13,6 +13,9 @@ public class Life : MonoBehaviour
 	void Start()
 	{
 		health = maxHealth;
+		if (UpdateLifeCount != null) {
+			UpdateLifeCount(nbLife);
+		}
 	}
 
 	public void Heal(int healthPoint)
