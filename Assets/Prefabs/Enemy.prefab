@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114199049223187488}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: EnemyBullet
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e52b2f676923cc4c82fd768b4a7da2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nbLife: 1
   maxHealth: 100
 --- !u!212 &212566355338227574
 SpriteRenderer:
