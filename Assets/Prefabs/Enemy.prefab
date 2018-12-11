@@ -83,7 +83,7 @@ Transform:
   m_GameObject: {fileID: 1403954804782418}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 4675213795709658}
   m_Father: {fileID: 0}
@@ -149,16 +149,10 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.03984133, y: 0.38195965}
       - {x: -0.041281577, y: 0.38195965}
-      - {x: -0.12508391, y: 0.22224782}
-      - {x: -0.5039213, y: -0.21516202}
-      - {x: -0.5015953, y: -0.3057241}
-      - {x: -0.23406266, y: -0.30542728}
-      - {x: -0.14701763, y: -0.3907251}
-      - {x: 0.14051436, y: -0.3840152}
-      - {x: 0.23015894, y: -0.30308005}
-      - {x: 0.49, y: -0.30180094}
-      - {x: 0.4946398, y: -0.21443842}
-      - {x: 0.119841084, y: 0.22427954}
+      - {x: -0.5007182, y: -0.19465017}
+      - {x: -0.4993068, y: -0.39168087}
+      - {x: 0.5063217, y: -0.3908595}
+      - {x: 0.50535554, y: -0.1883225}
 --- !u!114 &114199049223187488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,7 +167,7 @@ MonoBehaviour:
   firePoint:
   - {fileID: 1726306973241204}
   bullet: {fileID: 1036457088139722, guid: 798b9a1c578d75a4186806e848cc60ea, type: 2}
-  fireRate: 1
+  fireRate: 3
 --- !u!114 &114486766899355886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914947c79d0a7c8459b43224a19c64a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 250
 --- !u!114 &114777871909745452
 MonoBehaviour:
   m_ObjectHideFlags: 1

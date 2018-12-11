@@ -32,7 +32,6 @@ public class Score : MonoBehaviour
 	
 	void UpdateHUD()
 	{
-		Debug.Log("UpdateHUD : " + "Score: " + score);
 		textScore.SetText("Score: " + score);
 	}
 }

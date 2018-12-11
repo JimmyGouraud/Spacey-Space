@@ -9,6 +9,7 @@ public class LifeUI : MonoBehaviour
 
 	void Start()
 	{
+		UpdateLifeUI(playerLife.nbLife);
 		playerLife.UpdateLifeCount += UpdateLifeUI;
 	}
 
