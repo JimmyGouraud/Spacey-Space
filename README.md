@@ -1,7 +1,7 @@
 # Spacey Space
 
 Space shooter inspired from Warblade.
-<br/>
+<br/><br/><br/>
 
 TODO list:
  * ~~Basic Menu (with buttons "Play" and "Quit")~~
@@ -10,7 +10,7 @@ TODO list:
  * ~~Life management + HUD life management~~
  * ~~Score management + HUD score management~~
  * ~~Level generator~~
+ * ~~Game Over display~~
  * Enemy movement
  * Player/Enemy animation
  * Destruction/Explosion animation
- * Game Over display

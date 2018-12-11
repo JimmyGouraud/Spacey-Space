@@ -42,7 +42,7 @@ public class Life : MonoBehaviour
 	{
 		health -= damage;
 
-		if (!IsAlive()) {
+		if (!HasNoHealth()) {
 			nbLife--;
 			if (nbLife < 0) {
 				nbLife = 0;
@@ -59,8 +59,13 @@ public class Life : MonoBehaviour
 		}
 	}
 
-	public bool IsAlive()
+	public bool HasNoHealth()
 	{
 		return (health > 0);
+	}
+
+	public bool IsAlive()
+	{
+		return (nbLife > 0);
 	}
 }

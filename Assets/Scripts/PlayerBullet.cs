@@ -7,7 +7,8 @@ public class PlayerBullet : MonoBehaviour
 	public int damage = 30;
 	public Rigidbody2D rb;
 
-	void Start () {
+	void Start ()
+	{
 		rb.velocity = this.transform.up * speed;
 	}
 
