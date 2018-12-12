@@ -17,7 +17,7 @@ public class ButtonController : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
 	void Start()
 	{
-		this.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width / 2f, Camera.main.WorldToScreenPoint(player.transform.position - player.transform.lossyScale / 2f).y);
+		this.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width / 2f, Camera.main.WorldToScreenPoint(player.transform.position - player.transform.lossyScale).y);
 	}
 
 	public void OnPointerDown(PointerEventData eventData)
