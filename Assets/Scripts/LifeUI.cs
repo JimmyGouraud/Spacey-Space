@@ -5,29 +5,33 @@ public class LifeUI : MonoBehaviour
 {
 	public GameObject playerLifePrefab;
 	public Life playerLife;
-	public int pixelOffet = 10;
+
+	Vector2 lifeSize, lifePosition;
+	int lifePixelOffet;
 
 	void Start()
 	{
-		UpdateLifeUI(playerLife.nbLife);
-		playerLife.UpdateLifeCount += UpdateLifeUI;
+		playerLife.UpdateLifesCount += UpdateLifesUI;
+
+		Vector2 lifeSize = playerLifePrefab.GetComponent<RectTransform>().sizeDelta;
+		Vector2 lifePosition = playerLifePrefab.GetComponent<RectTransform>().anchoredPosition;
+		lifePixelOffet = (int)Mathf.Floor(lifeSize.y * 1.5f);
+		UpdateLifesUI(playerLife.LifesCount);
 	}
 
-	public void UpdateLifeUI(int nbLife)
+	public void UpdateLifesUI(int lifesCount)
 	{
-		int nbLifeUI = this.transform.childCount;
+		int lifesCountUI = this.transform.childCount;
 
-		if (nbLife < nbLifeUI) {
-			for (int i = nbLife; i < nbLifeUI; i++) {
+		if (lifesCount < lifesCountUI) {
+			for (int i = lifesCount; i < lifesCountUI; i++) {
 				Destroy(this.transform.GetChild(i).gameObject);
 			}
-		} else if (nbLife > nbLifeUI) {
-			Vector2 lifeSize = playerLifePrefab.GetComponent<RectTransform>().sizeDelta;
-			Vector2 lifePosition = playerLifePrefab.GetComponent<RectTransform>().anchoredPosition;
-
-			for (int i = nbLifeUI; i < nbLife; i++) {
+		}
+		else if (lifesCount > lifesCountUI) {
+			for (int i = lifesCountUI; i < lifesCount; i++) {
 				GameObject life = Instantiate(playerLifePrefab, this.transform);
-				life.GetComponent<RectTransform>().anchoredPosition = new Vector2(lifePosition.x, lifePosition.y - (lifeSize.y + pixelOffet) * i);
+				life.GetComponent<RectTransform>().anchoredPosition = new Vector2(lifePosition.x, lifePosition.y - (lifeSize.y + lifePixelOffet) * i);
 			}
 		}
 	}

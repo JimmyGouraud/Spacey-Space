@@ -3,69 +3,61 @@
 
 public class Life : MonoBehaviour
 {
-	public int nbLife = 1;
-	public int maxHealth = 100;
+	public delegate void UpdateLifeCountDelegate(int _lifes);
+	public UpdateLifeCountDelegate UpdateLifesCount;
 
-	int health = 100;
-	public delegate void UpdateLifeCountDelegate(int nbLife);
-	public UpdateLifeCountDelegate UpdateLifeCount;
+	public delegate void PlayerDeathDelegate();
+	public PlayerDeathDelegate PlayerDeath;
 
-	void Start()
+	public int health = 100;
+
+	[SerializeField]
+	private int lifes = 1;
+	public int LifesCount
 	{
-		health = maxHealth;
-		if (UpdateLifeCount != null) {
-			UpdateLifeCount(nbLife);
+		get	{ return lifes; }
+
+		set
+		{
+			if (UpdateLifesCount != null) {
+				UpdateLifesCount(lifes);
+			}
+
+			lifes = value;
+			if (lifes < 0) {
+				lifes = 0;
+				if (PlayerDeath != null) {
+					PlayerDeath();
+				}
+
+				// TODO: Instanciate gameobject to simulate death (explosion or something like that)
+				Destroy(this.gameObject);
+			}
 		}
 	}
+	
 
 	public void Heal(int healthPoint)
 	{
-		if (health == maxHealth) { return; }
-
 		health += healthPoint;
-
-		if (health > maxHealth) {
-			health = maxHealth;
-		}
 	}
 
 	public void AddLife(int nbBonusLife)
 	{
-		nbLife += nbBonusLife;
-
-		if (UpdateLifeCount != null) {
-			UpdateLifeCount(nbLife);
-		}
+		LifesCount += nbBonusLife;
 	}
 
 	public void TakeDamage(int damage)
 	{
 		health -= damage;
 
-		if (!HasNoHealth()) {
-			nbLife--;
-			if (nbLife < 0) {
-				nbLife = 0;
-			}
-
-			if (UpdateLifeCount != null) {
-				UpdateLifeCount(nbLife);
-			}
-
-			// TODO: Instanciate gameobject to simulate death (explosion or something like that)
-			if (nbLife <= 0) {
-				Destroy(this.gameObject);
-			}
+		if (!IsAlive()) {
+			LifesCount--;
 		}
-	}
-
-	public bool HasNoHealth()
-	{
-		return (health > 0);
 	}
 
 	public bool IsAlive()
 	{
-		return (nbLife > 0);
+		return (health > 0);
 	}
 }

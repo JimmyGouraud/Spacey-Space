@@ -22,7 +22,7 @@ public class LevelGenerator : MonoBehaviour
 		int nbEnemyLine = 4;
 		int nbEnemy = nbEnemyLine * nbEnemyPerLine;
 		Vector2 enemyScale = enemyPrefab.transform.lossyScale * 1.5f;
-		Vector3 offsetPosition = new Vector2(middleTopOffset.x - ((nbEnemyPerLine - 1) * enemyScale.x / 2f),
+		Vector2 offsetPosition = new Vector2(middleTopOffset.x - ((nbEnemyPerLine - 1) * enemyScale.x / 2f),
 											 middleTopOffset.y - nbEnemyLine * enemyScale.y);
 
 		for (int i = 0; i < nbEnemy; i++) {
@@ -33,8 +33,11 @@ public class LevelGenerator : MonoBehaviour
 			GameObject enemy = Instantiate(enemyPrefab, this.transform);
 
 			float offsetX = ((i / nbEnemyPerLine) % 2 == 0) ? 0f : enemyScale.x / 2f;
-			enemy.transform.position = new Vector3(offsetX + (i % nbEnemyPerLine) * enemyScale.y,(i / nbEnemyPerLine) * enemyScale.x);
-			enemy.transform.position += offsetPosition;
+			Vector2 destinationPosition = offsetPosition + new Vector2(offsetX + (i % nbEnemyPerLine) * enemyScale.y,(i / nbEnemyPerLine) * enemyScale.x);
+			Vector2 initPosition = new Vector2(middleTopOffset.x + 1, middleTopOffset.y);
+
+			enemy.transform.position = initPosition;
+			enemy.GetComponent<Enemy>().MoveToPos(destinationPosition);
 		}
 	}
 }

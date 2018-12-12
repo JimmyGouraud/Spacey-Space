@@ -11,15 +11,13 @@ public class GameOverMenu : MonoBehaviour
 	void Start()
 	{
 		GameOverUI.SetActive(false);
-		playerLife.UpdateLifeCount += GameOver;
+		playerLife.PlayerDeath += GameOver;
 	}
 
-	void GameOver(int nbLife)
+	void GameOver()
 	{
-		if (!playerLife.IsAlive()) {
-			Time.timeScale = 0f;
-			GameOverUI.SetActive(true);
-		}
+		Time.timeScale = 0f;
+		GameOverUI.SetActive(true);
 	}
 
 	public void Replay()
