@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212518853665960636}
   - component: {fileID: 58789084336079438}
   - component: {fileID: 50986496260162586}
-  - component: {fileID: 114003237995538648}
+  - component: {fileID: 114730396682852756}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: PlayerBullet
@@ -56,7 +56,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.85
---- !u!114 &114003237995538648
+--- !u!114 &114730396682852756
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,12 +86,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1382913694930396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e0078ead95888844a918cbd699d89f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 9576c9b28dcdefd44999d1fbfb6f189b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 7
   damage: 30
   rb: {fileID: 50986496260162586}
+  isPlayerBullet: 1
+  movement: 1
 --- !u!212 &212518853665960636
 SpriteRenderer:
   m_ObjectHideFlags: 1

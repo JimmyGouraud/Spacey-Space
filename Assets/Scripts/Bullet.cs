@@ -1,20 +1,30 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-
-public class EnemyBullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
-	public float speed = 20f;
+	public float speed = 10f;
 	public int damage = 30;
 	public Rigidbody2D rb;
+	public bool isPlayerBullet;
+	
+	string targetTag;
+
 
 	void Start()
 	{
-		rb.velocity = this.transform.up * speed;
+		targetTag = isPlayerBullet ? "Enemy" : "Player";
+	}
+
+	void FixedUpdate()
+	{
+		this.transform.position += this.transform.up * this.speed * Time.fixedDeltaTime;
 	}
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.tag == "Player") {
+		if (collision.tag == targetTag) {
 			Life life = collision.GetComponent<Life>();
 			if (life != null) {
 				life.TakeDamage(damage);
