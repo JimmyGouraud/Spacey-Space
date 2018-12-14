@@ -37,7 +37,7 @@ public class LevelGenerator : MonoBehaviour
 			Vector2 initPosition = new Vector2(middleTopOffset.x + 1, middleTopOffset.y);
 
 			enemy.transform.position = initPosition;
-			enemy.GetComponent<Enemy>().MoveToPos(destinationPosition);
+			enemy.GetComponent<Enemy>().SetPositioningDestination(destinationPosition);
 		}
 	}
 }

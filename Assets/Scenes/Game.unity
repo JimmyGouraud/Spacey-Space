@@ -296,6 +296,24 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: ButtonEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!1 &273965097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1919866790735700, guid: 8c12984d97a37e24b9752998c070d812,
+    type: 2}
+  m_PrefabInternal: {fileID: 1029131236}
+--- !u!114 &273965099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 273965097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b74e4a7be6d8334a8d34be073484fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1382913694930396, guid: fb76689bce696d241963f68270ec19a2, type: 2}
+  fireRate: 0.1
 --- !u!1 &538590293
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1262f86a524e044bb8fba1d3f90fffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1403954804782418, guid: e0d3d0064ecbc4c4e8de87a3b7d3c706,
+  enemyPrefab: {fileID: 1526513216050872, guid: e0d3d0064ecbc4c4e8de87a3b7d3c706,
     type: 2}
 --- !u!1 &797821967
 GameObject:
@@ -694,6 +712,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 797821967}
   m_CullTransparentMesh: 0
+--- !u!1 &799313989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1716402590324288, guid: 8c12984d97a37e24b9752998c070d812,
+    type: 2}
+  m_PrefabInternal: {fileID: 1029131236}
+--- !u!114 &799313991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 799313989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b74e4a7be6d8334a8d34be073484fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1382913694930396, guid: fb76689bce696d241963f68270ec19a2, type: 2}
+  fireRate: 0.1
 --- !u!1 &800424755
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,6 +863,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 876383789}
   m_CullTransparentMesh: 0
+--- !u!1 &923591675 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1266951423052540, guid: 8c12984d97a37e24b9752998c070d812,
+    type: 2}
+  m_PrefabInternal: {fileID: 1029131236}
+--- !u!114 &923591677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923591675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b74e4a7be6d8334a8d34be073484fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1382913694930396, guid: fb76689bce696d241963f68270ec19a2, type: 2}
+  fireRate: 0.1
 --- !u!1001 &1029131236
 Prefab:
   m_ObjectHideFlags: 0
@@ -886,7 +940,8 @@ Prefab:
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114809037761109812, guid: 8c12984d97a37e24b9752998c070d812, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 8c12984d97a37e24b9752998c070d812, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1106222420

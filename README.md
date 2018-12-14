@@ -11,6 +11,6 @@ TODO list:
  * ~~Score management + HUD score management~~
  * ~~Level generator~~
  * ~~Game Over display~~
- * Enemy movement
+ * ~~Enemy movement~~
  * Player/Enemy animation
  * Destruction/Explosion animation
