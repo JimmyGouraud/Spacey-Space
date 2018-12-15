@@ -28,15 +28,12 @@ public class Enemy : MonoBehaviour
 	IEnumerator Movement()
 	{       
 		// First step : wait a positioning destination
-		Debug.Log("First step : wait a positioning destination");
-		yield return new WaitUntil(() => Mathf.Abs(positioning.x) < Mathf.Epsilon && Mathf.Abs(positioning.y) < Mathf.Epsilon);
+		yield return new WaitUntil(() => Vector2.Distance(positioning, this.transform.position) > Mathf.Epsilon);
 
 		// Second step : positioning
-		Debug.Log("Second step : positioning");
 		yield return Positioning();
 
 		// Third step : random movement
-		Debug.Log("Third step : random movement");
 		yield return RandomMovement();
 	}
 
@@ -47,7 +44,6 @@ public class Enemy : MonoBehaviour
 
 	IEnumerator RandomMovement()
 	{
-
 		while (true) {
 			float timeBeforeMovement = Random.Range(1f, 20f);
 			yield return new WaitForSeconds(timeBeforeMovement);
@@ -61,7 +57,7 @@ public class Enemy : MonoBehaviour
 	{
 		float step = speed * Time.deltaTime;
 
-		while (Mathf.Abs(positionDestination.x - transform.position.x) > Mathf.Epsilon && Mathf.Abs(positionDestination.y - transform.position.y) > Mathf.Epsilon) {
+		while (Vector2.Distance(positionDestination, this.transform.position) > Mathf.Epsilon) {
 			transform.position = Vector2.MoveTowards(transform.position, positionDestination, step);
 			yield return null;
 		}
